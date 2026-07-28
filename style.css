@@ -1,0 +1,371 @@
+/* ========================================
+   Oleksandr Pavlenko Gallery
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: "Manrope", sans-serif;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    line-height: 1.7;
+
+    font-size: 18px;
+
+}
+
+/* ================= HEADER ================= */
+
+header {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 90px 25px 70px;
+
+}
+
+h1 {
+
+    font-size: 68px;
+
+    font-weight: 600;
+
+    letter-spacing: -2px;
+    color: #111;
+
+}
+
+h2 {
+
+    margin-top: 18px;
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+    color: #111;
+
+}
+
+.intro {
+
+    margin-top: 18px;
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+}
+
+.description {
+
+    margin-top: 18px;
+
+    max-width: 640px;
+
+    color: #111;
+
+}
+
+/* ================= GALLERY ================= */
+
+.gallery {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 0 25px 120px;
+
+}
+
+/* ================= PAINTING ================= */
+
+.painting {
+
+    display: grid;
+
+    grid-template-columns: 1fr 420px;
+
+    gap: 70px;
+
+    margin-bottom: 140px;
+
+    align-items: center;
+
+}
+
+.painting img {
+
+    width: 100%;
+
+    cursor: zoom-in;
+
+    transition: .45s ease;
+
+}
+
+.painting img:hover {
+
+    transform: scale(1.015);
+
+}
+
+.info h3 {
+
+    font-size: 34px;
+
+    font-weight: 600;
+
+}
+
+.info p {
+
+    margin-top: 18px;
+
+    color: #666;
+
+}
+
+.price {
+
+    margin-top: 40px;
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+}
+
+/* ================= BUTTON ================= */
+
+button {
+
+    margin-top: 45px;
+
+    padding: 18px 34px;
+
+    border: 1px solid black;
+
+    background: white;
+
+    color: black;
+
+    font-size: 16px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition: .35s;
+
+}
+
+button:hover {
+
+    background: black;
+
+    color: white;
+
+}
+
+/* ================= LIGHTBOX ================= */
+
+#lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.93);
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px;
+
+    z-index: 1000;
+
+}
+
+#lightbox img {
+
+    max-width: 92%;
+
+    max-height: 92%;
+
+}
+
+#close {
+
+    position: absolute;
+
+    top: 30px;
+
+    right: 40px;
+
+    color: white;
+
+    font-size: 38px;
+
+    cursor: pointer;
+
+}
+
+/* ================= MODAL ================= */
+
+#contact-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.65);
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+}
+
+.modal-content {
+
+    background: white;
+
+    width: 480px;
+
+    max-width: 100%;
+
+    padding: 45px;
+
+}
+
+.modal-content h2 {
+
+    color: black;
+
+    margin-bottom: 30px;
+
+}
+
+input,
+textarea {
+
+    width: 100%;
+
+    margin-bottom: 18px;
+
+    padding: 15px;
+
+    border: 1px solid #ddd;
+
+    font-size: 16px;
+
+    font-family: inherit;
+
+}
+
+textarea {
+
+    resize: vertical;
+
+    min-height: 140px;
+
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width:900px){
+
+.painting{
+
+grid-template-columns:1fr;
+
+gap:35px;
+
+margin-bottom:90px;
+
+}
+
+header{
+
+padding-top:60px;
+
+}
+
+h1{
+
+font-size:40px;
+
+}
+
+.info h3{
+
+font-size:28px;
+
+}
+
+.price{
+
+font-size:30px;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+}
+
+.contact-section {
+    max-width: 700px;
+    margin: 100px auto 60px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.contact-section h2 {
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    line-height: 1.7;
+    color: #555;
+}
+
+.contact-links {
+    margin-top: 30px;
+}
+
+.contact-links a {
+    color: #000;
+    text-decoration: none;
+    transition: opacity .2s;
+}
+
+.contact-links a:hover {
+    opacity: .6;
+}
