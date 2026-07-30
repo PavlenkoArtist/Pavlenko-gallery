@@ -895,10 +895,11 @@ Kaufanfrage senden
 
 <h2>Kaufanfrage</h2>
 
-<form action="https://formsubmit.co/artistpavlenko@gmail.com" method="POST">
+<form action="https://formsubmit.co/artistpavlenko@gmail.com" method="POST" id="contact-form">
     <input type="hidden" name="_subject" value="Нова заявка на покупку картини">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://pavlenkoartist.github.io/Pavlenko-gallery/">
 
 <input
 type="text"
@@ -927,6 +928,35 @@ Anfrage senden
 </div>
 
 </div>
+
+<script>
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+                Accept: "application/json"
+            }
+        });
+
+        if (response.ok) {
+            alert("Vielen Dank! Ihre Anfrage wurde erfolgreich gesendet. Ich werde mich bald bei Ihnen melden.");
+            form.reset();
+        } else {
+            alert("Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.");
+        }
+    } catch (error) {
+        alert("Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.");
+    }
+});
+</script>
 
 <script src="script.js"></script>
 
